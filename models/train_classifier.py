@@ -39,6 +39,16 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    
+    """
+    Tokenize the text function
+    
+    Arguments:
+        text -> Text message which needs to be tokenized
+    Output:
+        clean_tokens -> List of tokens extracted from the provided text
+    """
+
     url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     detected_urls = re.findall(url_regex, text)
     for url in detected_urls:
