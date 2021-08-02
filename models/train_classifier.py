@@ -20,6 +20,16 @@ import pickle
 
 
 def load_data(database_filepath):
+    """
+    Load Data from the Database Function
+    
+    Arguments:
+        database_filepath -> Path to SQLite destination database (e.g. disaster_response.db)
+    Output:
+        X -> a dataframe containing features
+        y -> a dataframe containing labels
+        category_names -> List of categories name
+    """
     engine = create_engine('sqlite:///'+database_filepath)
     df = pd.read_sql_table('DisasterResponse', engine)
     X = df.message
